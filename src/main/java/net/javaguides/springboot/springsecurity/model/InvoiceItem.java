@@ -13,6 +13,12 @@ import javax.persistence.*;
 @Table
 public class InvoiceItem {
 
+    public InvoiceItem( Integer quantity, String uom, Double price) {
+        this.quantity = quantity;
+        this.uom = uom;
+        this.price = price;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

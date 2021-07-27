@@ -8,15 +8,15 @@ import java.util.Set;
 
 
 @Entity
-@Table(name = "`our-invoice`")
 public class Invoice  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "inv_num")
     private String invoiceNumber;
+
+
 
     private String memos;
 
@@ -34,7 +34,6 @@ public class Invoice  {
 
 
 
-    @JsonIgnore
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "invoice", cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<InvoiceItem> items;
 
