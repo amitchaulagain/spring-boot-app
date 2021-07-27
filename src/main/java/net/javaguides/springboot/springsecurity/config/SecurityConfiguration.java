@@ -1,5 +1,6 @@
 package net.javaguides.springboot.springsecurity.config;
 
+import net.javaguides.springboot.springsecurity.model.Animal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,6 +47,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
+
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider(){
