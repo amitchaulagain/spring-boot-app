@@ -13,10 +13,15 @@ import javax.persistence.*;
 @Table
 public class InvoiceItem {
 
-    public InvoiceItem( Integer quantity, String uom, Double price) {
+    public InvoiceItem() {
+
+    }
+
+    public InvoiceItem(Integer quantity, String uom, Double price, Invoice invoice) {
         this.quantity = quantity;
         this.uom = uom;
         this.price = price;
+        this.invoice = invoice;
     }
 
     @Id

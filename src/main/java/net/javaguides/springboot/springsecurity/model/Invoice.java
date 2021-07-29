@@ -1,21 +1,18 @@
 package net.javaguides.springboot.springsecurity.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import javax.validation.Valid;
+import java.util.HashSet;
 import java.util.Set;
 
 
 @Entity
-public class Invoice  {
+public class Invoice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String invoiceNumber;
-
 
 
     private String memos;
@@ -33,11 +30,8 @@ public class Invoice  {
     Address address;
 
 
-
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "invoice", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Set<InvoiceItem> items;
-
-
+    public Set<InvoiceItem> items = new HashSet<>();
 
 
     public String getInvoiceNumber() {
